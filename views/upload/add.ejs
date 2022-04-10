@@ -1,0 +1,45 @@
+<%- include ../layouts/header.ejs %>
+
+<!-- 錯誤訊息 -->
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+<!-- 正確訊息 -->
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<form action="/upload/add" method="post" name="add" >
+	<table width="35%" border="0">
+		<tr>
+			<td>name</td>
+			<td><input type="text" name="name" id="name" value="<%= name %>" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td>longitude</td>
+			<td><input type="text" name="longitude" id="longitude" value="<%= longitude%>" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td>latitude</td>
+			<td><input type="text" name="latitude" id="latitude" value="<%= latitude%>" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td>date</td>
+			<td><input type="text" name="date" id="date" placeholder="YYYY.MM.DD hh:mm:ss" value="<%= date %>"/>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><td>
+			<td><input type="submit" name="Submit" value="Add" /></td>
+		</tr>
+	</table>
+</from>
+
+<%- include ../layouts/footer.ejs %>

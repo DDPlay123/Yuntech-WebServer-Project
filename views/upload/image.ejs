@@ -1,0 +1,27 @@
+<%- include ../layouts/header.ejs %>
+
+<!-- 錯誤訊息 -->
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+<!-- 正確訊息 -->
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<form action="/upload/add" method="post" name="add" encType="multipart/form-data">
+	<table width="35%" border="0">
+		<tr>
+			<td>imageFile</td>
+			<td><input type="file" name="imageFile" id="imageFile" accept="image/*" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td><td>
+			<td><input type="submit" name="Submit" value="Add" /></td>
+		</tr>
+	</table>
+</from>
+
+<%- include ../layouts/footer.ejs %>
